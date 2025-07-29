@@ -1,9 +1,9 @@
 import pytest
 from models.vacancy import Vacancy
-from typing import Dict
+
 
 @pytest.fixture
-def sample_vacancy_data() -> Dict:
+def sample_vacancy_data():
     return {
         'title': 'Python Developer',
         'url': 'https://hh.ru/vacancy/123',
@@ -11,6 +11,7 @@ def sample_vacancy_data() -> Dict:
         'salary_to': 150000,
         'description': 'Требуется опыт работы с Python'
     }
+
 
 def test_vacancy_creation(sample_vacancy_data):
     vacancy = Vacancy(**sample_vacancy_data)
@@ -37,6 +38,7 @@ def test_vacancy_validation():
     with pytest.raises(ValueError):
         Vacancy('Invalid URL', 'invalid_url', 100000, None, 'desc')
 
+
 def test_cast_to_object_list():
     api_data = [{
         'name': 'Dev',
@@ -47,6 +49,7 @@ def test_cast_to_object_list():
     vacancies = Vacancy.cast_to_object_list(api_data)
     assert len(vacancies) == 1
     assert vacancies[0].title == 'Dev'
+
 
 def test_to_dict(sample_vacancy_data):
     vacancy = Vacancy(**sample_vacancy_data)

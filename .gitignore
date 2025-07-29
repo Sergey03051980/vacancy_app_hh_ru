@@ -1,0 +1,40 @@
+# Файлы Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+
+# Логи и базы данных
+*.log
+*.sqlite
+*.db
+
+# Виртуальное окружение
+venv/
+.env/
+.venv/
+env/
+
+# IDE и редакторы
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Пакеты и зависимости
+dist/
+build/
+*.egg
+
+# Конфигурационные файлы
+*.cfg
+*.ini
+
+# Тестовые данные
+test_data/
+*.test
+
+# Системные файлы
+.DS_Store  # Mac
+Thumbs.db  # Windows

@@ -2,7 +2,7 @@ import pytest
 import os
 import json
 from storage.json_storage import JSONStorage
-from models.vacancy import Vacancy
+# from models.vacancy import Vacancy
 
 
 @pytest.fixture

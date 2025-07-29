@@ -1,10 +1,10 @@
 import json
 import os
 from typing import List, Dict
-from .abstract_storage import AbstractStorage
+# from .abstract_storage import AbstractStorage
 
 
-class JSONStorage(AbstractStorage):
+class JSONStorage:
     __slots__ = ('_file_path',)
 
     def __init__(self, file_path: str = 'vacancies.json'):
@@ -30,7 +30,6 @@ class JSONStorage(AbstractStorage):
     def get_vacancies(self, criteria: Dict) -> List[Dict]:
         data = self._read_file()
         return [v for v in data if all(v.get(k) == criteria[k] for k in criteria)]
-
 
     def delete_vacancy(self, vacancy: Dict) -> None:
         data = self._read_file()
